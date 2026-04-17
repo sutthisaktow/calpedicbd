@@ -10,7 +10,7 @@ function getIBW(ageMonths) {
   if (ageMonths <= 11) return (ageMonths + 9) / 2;
   const y = ageMonths / 12;
   if (y < 7)  return 2 * y + 8;
-  if (y <= 12) return (7 * y - 5) / 2;
+  if (y < 13) return (7 * y - 5) / 2;
   return null;
 }
 
@@ -42,10 +42,10 @@ function calcOralDose(drug, weight, ibw) {
     type: 'standard',
     weight: w,
     usedIBW: drug.useIBW && ibw !== null && ibw < weight,
-    minMg: r2(minDose),
-    maxMg: r2(maxDose),
-    minML: r2(minDose * mlPerMg),
-    maxML: r2(maxDose * mlPerMg),
+    minMg: r1(minDose),
+    maxMg: r1(maxDose),
+    minML: r1(minDose * mlPerMg),
+    maxML: r1(maxDose * mlPerMg),
     freq: drug.freq,
     remark: drug.remark,
     maxDay: drug.maxDay
@@ -166,11 +166,17 @@ function calcCrCl(age, weight, height, cr, isMale) {
     ajbw = ibw;
   }
 
-  const crcl = (140 - age) * ajbw * (isMale ? 1 : 0.85) / (72 * cr);
+  const crcl = (140 - age) * weight * (isMale ? 1 : 0.85) / (72 * cr);
   return { crcl: r1(Math.max(crcl, 0)), ibw: r1(ibw), ajbw: r1(ajbw) };
 }
 
 // Helpers
 function r2(n)    { return n === null ? null : Math.round(n * 100) / 100; }
 function r1(n)    { return Math.round(n * 10) / 10; }
-function rHalf(n) { return Math.round(n * 2) / 2; }
+function rHalf(n) {
+  const num = Math.floor(n);
+  const dec = n - num;
+  if (dec > 0.5) return num + 1;
+  if (dec > 0)   return num + 0.5;
+  return n;
+}
