@@ -113,6 +113,11 @@ function makeInjCard(drug, res) {
   const d = document.createElement('div');
   d.className = 'drug-card inj';
 
+  if (drug.type === 'empty') {
+    d.innerHTML = `<div class="drug-name">${drug.name}</div><div class="drug-detail" style="color:#999">— ไม่มีข้อมูล —</div>`;
+    return d;
+  }
+
   if (res.type === 'subcondition') {
     const rows = res.conditions.map(c => {
       const dose = c.maxDay !== null

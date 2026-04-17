@@ -88,6 +88,11 @@
     "manage": "q6h", "maxDay": null, "useIBW": false
   },
   {
+    "id": "dimenhydrinate",
+    "name": "Dimenhydrinate",
+    "type": "empty"
+  },
+  {
     "id": "diazepam_iv",
     "name": "Diazepam IV (Seizure)",
     "type": "standard",
@@ -114,8 +119,7 @@
     "name": "Hyoscine IV",
     "type": "standard",
     "min": 0.3, "max": null,
-    "manage": "q6h PRN", "maxDay": 15, "useIBW": false,
-    "unit": "mg/dose"
+    "manage": "PRN", "maxDay": 15, "useIBW": false
   },
   {
     "id": "meropenem",
