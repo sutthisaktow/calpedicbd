@@ -1,0 +1,183 @@
+[
+  {
+    "id": "amikacin",
+    "name": "Amikacin",
+    "type": "standard",
+    "min": 15, "max": 22.5,
+    "manage": "q24h หรือ q8h", "maxDay": null, "useIBW": false,
+    "note": "1 vial : 1 bag"
+  },
+  {
+    "id": "ampicillin",
+    "name": "Ampicillin",
+    "type": "subcondition",
+    "conditions": [
+      { "label": "ทั่วไป", "min": 200, "max": null, "manage": "q6h", "maxDay": null },
+      { "label": "Meningitis", "min": 300, "max": 400, "manage": "q6h", "maxDay": null }
+    ]
+  },
+  {
+    "id": "bactrim_iv",
+    "name": "Bactrim IV (TMP component)",
+    "type": "standard",
+    "min": 4, "max": 6,
+    "manage": "q12h", "maxDay": null, "useIBW": false
+  },
+  {
+    "id": "cefazolin",
+    "name": "Cefazolin",
+    "type": "standard",
+    "min": 50, "max": 150,
+    "manage": "q8h", "maxDay": 6000, "useIBW": false
+  },
+  {
+    "id": "ceftriaxone",
+    "name": "Ceftriaxone",
+    "type": "standard",
+    "min": 50, "max": 100,
+    "manage": "q24h", "maxDay": null, "useIBW": false
+  },
+  {
+    "id": "ceftazidime",
+    "name": "Ceftazidime",
+    "type": "subcondition",
+    "conditions": [
+      { "label": "ทั่วไป", "min": 150, "max": 200, "manage": "q8h", "maxDay": null },
+      { "label": "Cystic Fibrosis (CF)", "min": 300, "max": null, "manage": "q8h", "maxDay": null }
+    ]
+  },
+  {
+    "id": "cefotaxime",
+    "name": "Cefotaxime",
+    "type": "subcondition",
+    "conditions": [
+      { "label": "0–7 วัน ทั่วไป", "min": 50, "max": null, "manage": "q12h", "maxDay": null },
+      { "label": "0–7 วัน Meningitis", "min": 50, "max": 75, "manage": "q12h", "maxDay": null },
+      { "label": "8–28 วัน ทั่วไป", "min": 50, "max": null, "manage": "q8h", "maxDay": null },
+      { "label": "8–28 วัน Meningitis", "min": 50, "max": 65, "manage": "q8h", "maxDay": null },
+      { "label": ">28 วัน ทั่วไป", "min": 50, "max": 65, "manage": "q8h", "maxDay": null },
+      { "label": ">28 วัน Meningitis", "min": 75, "max": 100, "manage": "q8h", "maxDay": null }
+    ]
+  },
+  {
+    "id": "clindamycin",
+    "name": "Clindamycin",
+    "type": "standard",
+    "min": 20, "max": 40,
+    "manage": "q6–8h", "maxDay": null, "useIBW": false
+  },
+  {
+    "id": "cloxacillin",
+    "name": "Cloxacillin",
+    "type": "standard",
+    "min": 50, "max": 200,
+    "manage": "q6h", "maxDay": null, "useIBW": false
+  },
+  {
+    "id": "colistin",
+    "name": "Colistin",
+    "type": "standard",
+    "min": 5, "max": null,
+    "manage": "q12h", "maxDay": null, "useIBW": false
+  },
+  {
+    "id": "cpm_iv",
+    "name": "CPM IV (อายุ ≥2ปี)",
+    "type": "standard",
+    "min": 0.25, "max": null,
+    "manage": "q6h", "maxDay": null, "useIBW": false
+  },
+  {
+    "id": "diazepam_iv",
+    "name": "Diazepam IV (Seizure)",
+    "type": "standard",
+    "min": 0.2, "max": 0.5,
+    "manage": "IV push ช้าๆ PRN", "maxDay": null, "useIBW": false,
+    "unit": "mg/dose"
+  },
+  {
+    "id": "ertapenem",
+    "name": "Ertapenem",
+    "type": "standard",
+    "min": 30, "max": null,
+    "manage": "q12h", "maxDay": 1000, "useIBW": false
+  },
+  {
+    "id": "gentamicin",
+    "name": "Gentamicin",
+    "type": "standard",
+    "min": 5, "max": 7,
+    "manage": "OD หรือ q8h", "maxDay": null, "useIBW": false
+  },
+  {
+    "id": "hyoscine_iv",
+    "name": "Hyoscine IV",
+    "type": "standard",
+    "min": 0.3, "max": null,
+    "manage": "q6h PRN", "maxDay": 15, "useIBW": false,
+    "unit": "mg/dose"
+  },
+  {
+    "id": "meropenem",
+    "name": "Meropenem",
+    "type": "subcondition",
+    "conditions": [
+      { "label": "ทั่วไป", "min": 60, "max": null, "manage": "q8h", "maxDay": null },
+      { "label": "Meningitis", "min": 120, "max": null, "manage": "q8h", "maxDay": 6000 },
+      { "label": "Cystic Fibrosis (CF)", "min": 120, "max": null, "manage": "q8h", "maxDay": 6000 }
+    ]
+  },
+  {
+    "id": "metoclopramide",
+    "name": "Metoclopramide",
+    "type": "standard",
+    "min": 0.1, "max": null,
+    "manage": "q6–8h", "maxDay": null, "useIBW": false,
+    "unit": "mg/dose"
+  },
+  {
+    "id": "metronidazole",
+    "name": "Metronidazole",
+    "type": "standard",
+    "min": 22.5, "max": 40,
+    "manage": "q6–8h", "maxDay": null, "useIBW": false
+  },
+  {
+    "id": "omeprazole",
+    "name": "Omeprazole",
+    "type": "standard",
+    "min": 1, "max": 2,
+    "manage": "OD", "maxDay": 40, "useIBW": false
+  },
+  {
+    "id": "ondansetron",
+    "name": "Ondansetron",
+    "type": "standard",
+    "min": 0.1, "max": 0.2,
+    "manage": "q6–8h PRN", "maxDay": null, "useIBW": false,
+    "unit": "mg/dose"
+  },
+  {
+    "id": "pip_tazo",
+    "name": "Piperacillin+Tazobactam",
+    "type": "standard",
+    "min": 300, "max": null,
+    "manage": "q6h", "maxDay": null, "useIBW": false
+  },
+  {
+    "id": "penicillinG",
+    "name": "Penicillin G",
+    "type": "standard",
+    "min": 150000, "max": 300000,
+    "manage": "q4–6h", "maxDay": null, "useIBW": false,
+    "unit": "units/kg/day"
+  },
+  {
+    "id": "vancomycin",
+    "name": "Vancomycin",
+    "type": "standard",
+    "min": 40, "max": 60,
+    "manage": "q6h (ดู TDM)", "maxDay": null, "useIBW": false,
+    "note": "1 vial : 1 bag"
+  }
+]

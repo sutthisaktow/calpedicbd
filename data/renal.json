@@ -1,0 +1,336 @@
+[
+  {
+    "id": "acyclovir",
+    "name": "Acyclovir",
+    "flag": "",
+    "maxText": "MAX 800 mg/dose",
+    "normalDose": "Standard dosing",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl > 25", "min": 25, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl 10–25", "min": 10, "max": 25, "dose": "800mg q8h (5×/วัน) หรือ 400mg q12h", "status": "adjusted" },
+      { "range": "CrCl < 10", "min": 0, "max": 10, "dose": "800mg q12h (5×/วัน) หรือ 200mg q12h", "status": "adjusted" }
+    ],
+    "dialysis": ""
+  },
+  {
+    "id": "allopurinol",
+    "name": "Allopurinol ★",
+    "flag": "*",
+    "maxText": "MAX 800 mg/day",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": true,
+    "rules": [
+      { "range": "eGFR ≥ 60", "min": 60, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "eGFR 30–59", "min": 30, "max": 60, "dose": "50 mg OD", "status": "adjusted" },
+      { "range": "eGFR 15–29", "min": 15, "max": 30, "dose": "50 mg ทุกวันเว้นวัน", "status": "adjusted" },
+      { "range": "eGFR 5–14", "min": 5, "max": 15, "dose": "50 mg 2×/สัปดาห์", "status": "adjusted" },
+      { "range": "eGFR < 5", "min": 0, "max": 5, "dose": "50 mg 1×/สัปดาห์", "status": "adjusted" }
+    ],
+    "dialysis": ""
+  },
+  {
+    "id": "apixaban",
+    "name": "Apixaban",
+    "flag": "",
+    "maxText": "",
+    "normalDose": "10mg BID × 7วัน → 5mg BID",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 15", "min": 15, "max": 9999, "dose": "ปกติ (ยกเว้น AF: ถ้ามี ≥2/3 เกณฑ์ → 2.5mg BID)", "status": "normal" },
+      { "range": "CrCl < 15", "min": 0, "max": 15, "dose": "ไม่แนะนำ", "status": "contraindicated" }
+    ],
+    "dialysis": "ไม่แนะนำ",
+    "remark": "AF criteria: อายุ ≥80ปี, น้ำหนัก ≤60kg, SCr ≥1.5"
+  },
+  {
+    "id": "atenolol",
+    "name": "Atenolol",
+    "flag": "",
+    "maxText": "MAX 100 mg/day",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl > 35", "min": 35, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl 15–35", "min": 15, "max": 35, "dose": "50 mg OD", "status": "adjusted" },
+      { "range": "CrCl < 15", "min": 0, "max": 15, "dose": "25 mg OD", "status": "adjusted" }
+    ],
+    "dialysis": "ให้หลัง HD"
+  },
+  {
+    "id": "colchicine",
+    "name": "Colchicine",
+    "flag": "",
+    "maxText": "MAX 1.2 mg/day",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl > 80", "min": 80, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl 30–80", "min": 30, "max": 80, "dose": "ปกติ (Flare); ระวังการใช้ซ้ำ", "status": "normal" },
+      { "range": "CrCl < 30", "min": 0, "max": 30, "dose": "ป้องกัน: 0.3mg/day; Flare: ห้ามซ้ำภายใน 2 สัปดาห์", "status": "adjusted" }
+    ],
+    "dialysis": "ระวัง — ขับออกทาง dialysis ได้น้อย"
+  },
+  {
+    "id": "digoxin",
+    "name": "Digoxin",
+    "flag": "",
+    "maxText": "",
+    "normalDose": "Oral/IV ตาม CrCl + น้ำหนัก (ดู table)",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 50", "min": 50, "max": 9999, "dose": "0.125–0.25 mg/day (ดู lookup table)", "status": "normal" },
+      { "range": "CrCl 20–49", "min": 20, "max": 50, "dose": "ลด dose — ดู lookup table CrCl × น้ำหนัก", "status": "adjusted" },
+      { "range": "CrCl < 20", "min": 0, "max": 20, "dose": "0.0625 mg OD หรือ QOD — ระวังสูง", "status": "adjusted" }
+    ],
+    "dialysis": "ไม่ถูกกำจัดโดย dialysis — ระวัง toxicity"
+  },
+  {
+    "id": "enoxaparin",
+    "name": "Enoxaparin (LMWH)",
+    "flag": "",
+    "maxText": "VTE: 1mg/kg q12h หรือ 1.5mg/kg q24h",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 30", "min": 30, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl < 30", "min": 0, "max": 30, "dose": "ป้องกัน: 30mg OD; VTE: พิจารณา UFH แทน หรือ 1mg/kg OD", "status": "adjusted" },
+      { "range": "CrCl < 20", "min": 0, "max": 20, "dose": "หลีกเลี่ยง", "status": "contraindicated" }
+    ],
+    "dialysis": ""
+  },
+  {
+    "id": "fenofibrate",
+    "name": "Fenofibrate micronized 200mg",
+    "flag": "",
+    "maxText": "MAX 200 mg/day",
+    "normalDose": "200 mg OD",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl > 80", "min": 80, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl 30–80", "min": 30, "max": 80, "dose": "เริ่ม dose ต่ำสุด ติดตาม Cr", "status": "adjusted" },
+      { "range": "CrCl < 30", "min": 0, "max": 30, "dose": "ห้ามใช้", "status": "contraindicated" }
+    ],
+    "dialysis": "ห้ามใช้"
+  },
+  {
+    "id": "furosemide",
+    "name": "Furosemide",
+    "flag": "",
+    "maxText": "MAX 1000 mg/day",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 30", "min": 30, "max": 9999, "dose": "ปกติ; HF รุนแรง → เพิ่ม dose เริ่มต้น", "status": "normal" },
+      { "range": "Anuria", "min": 0, "max": 5, "dose": "ห้ามใช้ใน Anuria", "status": "contraindicated" }
+    ],
+    "dialysis": ""
+  },
+  {
+    "id": "gabapentin",
+    "name": "Gabapentin (IR) ★",
+    "flag": "*",
+    "maxText": "MAX 1800–3600 mg/day",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 60", "min": 60, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl 30–59", "min": 30, "max": 60, "dose": "400–1400 mg/day แบ่ง 2 ครั้ง", "status": "adjusted" },
+      { "range": "CrCl 15–29", "min": 15, "max": 30, "dose": "200–700 mg/day ครั้งเดียว", "status": "adjusted" },
+      { "range": "CrCl < 15", "min": 0, "max": 15, "dose": "100–300 mg OD (ลดตามสัดส่วน)", "status": "adjusted" }
+    ],
+    "dialysis": "เสริม dose หลัง HD ทุกครั้ง"
+  },
+  {
+    "id": "gemfibrozil",
+    "name": "Gemfibrozil",
+    "flag": "",
+    "maxText": "MAX 1200 mg/day",
+    "normalDose": "600 mg BID",
+    "useEGFR": false,
+    "rules": [
+      { "range": "Cr < 2 mg/dL (ปกติ)", "min": 30, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "SCr > 2 mg/dL", "min": 10, "max": 30, "dose": "พิจารณา 300 mg BID", "status": "adjusted" },
+      { "range": "Severe impairment", "min": 0, "max": 10, "dose": "ห้ามใช้", "status": "contraindicated" }
+    ],
+    "dialysis": "ห้ามใช้"
+  },
+  {
+    "id": "metformin",
+    "name": "Metformin (IR) ★",
+    "flag": "*",
+    "maxText": "MAX 2550 mg/day",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": true,
+    "rules": [
+      { "range": "eGFR ≥ 45", "min": 45, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "eGFR 30–44", "min": 30, "max": 45, "dose": "ไม่แนะนำ", "status": "contraindicated" },
+      { "range": "eGFR < 30", "min": 0, "max": 30, "dose": "ห้ามใช้", "status": "contraindicated" }
+    ],
+    "dialysis": "ห้ามใช้"
+  },
+  {
+    "id": "methotrexate",
+    "name": "Methotrexate ★",
+    "flag": "*",
+    "maxText": ">20 mg/wk เพิ่ม AE",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": true,
+    "rules": [
+      { "range": "eGFR ≥ 50", "min": 50, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "eGFR 20–49", "min": 20, "max": 50, "dose": "ลด 50%", "status": "adjusted" },
+      { "range": "eGFR < 20", "min": 0, "max": 20, "dose": "ไม่แนะนำ", "status": "contraindicated" }
+    ],
+    "dialysis": "ไม่แนะนำ"
+  },
+  {
+    "id": "milk_magnesia",
+    "name": "Milk of Magnesia 400mg/5mL ★",
+    "flag": "*",
+    "maxText": "MAX 60 mL/24h",
+    "normalDose": "30–60 mL",
+    "useEGFR": true,
+    "rules": [
+      { "range": "eGFR ≥ 60", "min": 60, "max": 9999, "dose": "30–60 mL", "status": "normal" },
+      { "range": "eGFR 30–59", "min": 30, "max": 60, "dose": "30 mL ติดตาม Mg", "status": "adjusted" },
+      { "range": "eGFR < 30", "min": 0, "max": 30, "dose": "หลีกเลี่ยงถ้าเป็นไปได้", "status": "contraindicated" }
+    ],
+    "dialysis": ""
+  },
+  {
+    "id": "etoricoxib",
+    "name": "Etoricoxib (NSAID)",
+    "flag": "",
+    "maxText": "",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 30", "min": 30, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl < 30", "min": 0, "max": 30, "dose": "ห้ามใช้", "status": "contraindicated" }
+    ],
+    "dialysis": "ห้ามใช้"
+  },
+  {
+    "id": "ibuprofen_renal",
+    "name": "Ibuprofen (NSAID)",
+    "flag": "",
+    "maxText": "MAX 1200mg/24h",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 60", "min": 60, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl 30–59", "min": 30, "max": 60, "dose": "ใช้ dose ต่ำสุด หลีกเลี่ยงถ้าเสี่ยง AKI", "status": "adjusted" },
+      { "range": "CrCl ≤ 30", "min": 0, "max": 30, "dose": "หลีกเลี่ยง", "status": "contraindicated" }
+    ],
+    "dialysis": "หลีกเลี่ยง"
+  },
+  {
+    "id": "ketorolac",
+    "name": "Ketorolac Inj (NSAID)",
+    "flag": "",
+    "maxText": "<65ปี & ≥50kg: MAX 120mg/day | ≥65ปี/<50kg: MAX 60mg/day | MAX 5 วัน",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 60", "min": 60, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl < 60", "min": 0, "max": 60, "dose": "หลีกเลี่ยง", "status": "contraindicated" }
+    ],
+    "dialysis": "หลีกเลี่ยง"
+  },
+  {
+    "id": "mefenamic",
+    "name": "Mefenamic Acid (NSAID) ★",
+    "flag": "*",
+    "maxText": "",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": true,
+    "rules": [
+      { "range": "eGFR ≥ 60", "min": 60, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "eGFR < 60", "min": 0, "max": 60, "dose": "หลีกเลี่ยง", "status": "contraindicated" }
+    ],
+    "dialysis": "หลีกเลี่ยง"
+  },
+  {
+    "id": "meloxicam",
+    "name": "Meloxicam 7.5mg (NSAID)",
+    "flag": "",
+    "maxText": "MAX 15 mg/day",
+    "normalDose": "7.5–15 mg OD",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl > 15", "min": 15, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl ≤ 15", "min": 0, "max": 15, "dose": "ไม่แนะนำ", "status": "contraindicated" }
+    ],
+    "dialysis": "ไม่แนะนำ"
+  },
+  {
+    "id": "pregabalin",
+    "name": "Pregabalin",
+    "flag": "",
+    "maxText": "MAX 450mg/day (600mg neuropathic/seizure)",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 60", "min": 60, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl 30–59", "min": 30, "max": 60, "dose": "ลด 50%", "status": "adjusted" },
+      { "range": "CrCl 15–29", "min": 15, "max": 30, "dose": "25–150 mg/day", "status": "adjusted" },
+      { "range": "CrCl < 15", "min": 0, "max": 15, "dose": "25–75 mg/day", "status": "adjusted" }
+    ],
+    "dialysis": "เสริม dose หลัง HD"
+  },
+  {
+    "id": "spironolactone",
+    "name": "Spironolactone ★",
+    "flag": "*",
+    "maxText": "MAX 100 mg/day",
+    "normalDose": "ปกติตามข้อบ่งชี้",
+    "useEGFR": true,
+    "rules": [
+      { "range": "eGFR ≥ 50", "min": 50, "max": 9999, "dose": "12.5–25 mg/day (HF: 25mg OD)", "status": "normal" },
+      { "range": "eGFR 30–49", "min": 30, "max": 50, "dose": "HF: 25mg QOD ถ้า K ≤5; 12.5mg/day หรือ QOD", "status": "adjusted" },
+      { "range": "eGFR < 30", "min": 0, "max": 30, "dose": "หลีกเลี่ยง (เสี่ยง hyperkalemia)", "status": "contraindicated" }
+    ],
+    "dialysis": "หลีกเลี่ยง"
+  },
+  {
+    "id": "taf",
+    "name": "Tenofovir alafenamide (TAF)",
+    "flag": "",
+    "maxText": "",
+    "normalDose": "25 mg OD",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 15", "min": 15, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl < 15 (ไม่ HD)", "min": 0, "max": 15, "dose": "ไม่แนะนำ", "status": "contraindicated" }
+    ],
+    "dialysis": "มีข้อมูลน้อย"
+  },
+  {
+    "id": "tdf",
+    "name": "Tenofovir disoproxil (TDF)",
+    "flag": "",
+    "maxText": "300 mg/dose",
+    "normalDose": "300 mg q24h",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 50", "min": 50, "max": 9999, "dose": "300 mg q24h", "status": "normal" },
+      { "range": "CrCl 30–49", "min": 30, "max": 50, "dose": "300 mg q48h", "status": "adjusted" },
+      { "range": "CrCl 10–29", "min": 10, "max": 30, "dose": "300 mg q72–96h", "status": "adjusted" },
+      { "range": "CrCl < 10", "min": 0, "max": 10, "dose": "ยังไม่มีข้อมูลเพียงพอ", "status": "adjusted" }
+    ],
+    "dialysis": "300 mg ทุก 7 วัน หรือหลัง HD ประมาณ 12 ครั้ง"
+  },
+  {
+    "id": "tramadol",
+    "name": "Tramadol",
+    "flag": "",
+    "maxText": "MAX 400 mg/day",
+    "normalDose": "50–100 mg q4–6h",
+    "useEGFR": false,
+    "rules": [
+      { "range": "CrCl ≥ 30", "min": 30, "max": 9999, "dose": "ปกติ", "status": "normal" },
+      { "range": "CrCl < 30", "min": 0, "max": 30, "dose": "q12h interval, MAX 200 mg/day", "status": "adjusted" }
+    ],
+    "dialysis": "MAX 200 mg/day"
+  }
+]
