@@ -262,6 +262,17 @@ function showEmpty(id, icon, msg) {
   if (el) el.innerHTML = `<div class="empty-state"><div class="empty-icon">${icon}</div><div>${msg}</div></div>`;
 }
 
+function filterResults(containerId, query) {
+  const q = query.trim().toLowerCase();
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  container.querySelectorAll('.drug-card, .renal-card').forEach(card => {
+    const nameEl = card.querySelector('.drug-name, .renal-name');
+    const name = nameEl ? nameEl.textContent.toLowerCase() : '';
+    card.style.display = (!q || name.includes(q)) ? '' : 'none';
+  });
+}
+
 function toast(msg) {
   let t = document.getElementById('toast');
   if (!t) { t = document.createElement('div'); t.id = 'toast'; document.body.appendChild(t); }

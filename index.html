@@ -49,6 +49,7 @@
         <div id="oral-ibw" class="ibw-badge hidden"></div>
         <button class="btn-calc" onclick="calcOral()">คำนวณยากิน</button>
       </div>
+      <div class="search-bar"><input type="search" id="oral-search" placeholder="ค้นหาชื่อยา..." oninput="filterResults('oral-results', this.value)"></div>
       <div id="oral-results" class="results-grid"></div>
       <p class="ref-footer">อ้างอิง: NeoFax · Sanford Guide · Micromedex</p>
     </section>
@@ -77,6 +78,7 @@
         <div id="inj-ibw" class="ibw-badge hidden"></div>
         <button class="btn-calc inj" onclick="calcInj()">คำนวณยาฉีด</button>
       </div>
+      <div class="search-bar"><input type="search" id="inj-search" placeholder="ค้นหาชื่อยา..." oninput="filterResults('inj-results', this.value)"></div>
       <div id="inj-results" class="results-grid"></div>
       <p class="ref-footer">อ้างอิง: NeoFax · Sanford Guide</p>
     </section>
@@ -100,6 +102,7 @@
         </div>
         <button class="btn-calc tb" onclick="calcTB()">คำนวณยาวัณโรค</button>
       </div>
+      <div class="search-bar"><input type="search" id="tb-search" placeholder="ค้นหาชื่อยา..." oninput="filterResults('tb-results', this.value)"></div>
       <div id="tb-results" class="results-grid"></div>
       <p class="ref-footer">อ้างอิง: แนวทางการควบคุมวัณโรคประเทศไทย พ.ศ. 2564</p>
     </section>
@@ -154,6 +157,7 @@
         <div id="renal-crcl-display" class="ibw-badge hidden"></div>
         <button class="btn-calc renal" onclick="calcRenal()">คำนวณ CrCl &amp; ปรับขนาดยา</button>
       </div>
+      <div class="search-bar"><input type="search" id="renal-search" placeholder="ค้นหาชื่อยา..." oninput="filterResults('renal-results', this.value)"></div>
       <div id="renal-results" class="results-grid"></div>
       <p class="ref-footer">อ้างอิง: Merative Micromedex · UpToDate Lexidrug</p>
     </section>
