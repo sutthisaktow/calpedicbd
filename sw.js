@@ -1,4 +1,4 @@
-const CACHE = 'calpedicbd-v1';
+const CACHE = 'calpedicbd-__BUILD_TIME__';
 const ASSETS = [
   '/',
   '/index.html',
