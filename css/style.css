@@ -1,0 +1,291 @@
+:root {
+  --c-oral:   #1565c0;
+  --c-inj:    #2e7d32;
+  --c-tb:     #bf360c;
+  --c-renal:  #6a1b9a;
+  --c-bg:     #f0f4f8;
+  --c-card:   #fff;
+  --c-text:   #1a202c;
+  --c-muted:  #607d8b;
+  --c-border: #e2e8f0;
+  --h-header: 56px;
+  --h-nav:    60px;
+  --radius:   12px;
+  --shadow:   0 1px 6px rgba(0,0,0,.10), 0 2px 12px rgba(0,0,0,.06);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+               'Noto Sans Thai', 'Sarabun', sans-serif;
+  background: var(--c-bg);
+  color: var(--c-text);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Header ── */
+.app-header {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--h-header);
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+  z-index: 200;
+  display: flex; align-items: center;
+  padding: 0 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.header-inner { display: flex; align-items: center; gap: 10px; }
+.header-title { color: #fff; font-size: 18px; font-weight: 700; }
+.header-sub   { color: rgba(255,255,255,.75); font-size: 11px; margin-top: 1px; }
+
+/* ── Main ── */
+.app-main {
+  padding-top:    calc(var(--h-header) + 8px);
+  padding-bottom: calc(var(--h-nav) + 8px);
+  padding-left:   8px;
+  padding-right:  8px;
+  min-height: 100dvh;
+}
+
+/* ── Tabs ── */
+.tab-content { display: none; animation: fadeUp .18s ease; }
+.tab-content.active { display: block; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Input Card ── */
+.input-card {
+  background: var(--c-card);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+}
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.input-group label {
+  display: block;
+  font-size: 11px; font-weight: 700; letter-spacing: .5px;
+  color: var(--c-muted); text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.input-group input[type="number"],
+.input-group input[type="text"] {
+  width: 100%;
+  padding: 11px 12px;
+  border: 2px solid var(--c-border);
+  border-radius: 8px;
+  font-size: 16px;
+  background: #fafbfc;
+  transition: border-color .15s, box-shadow .15s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.input-group input:focus {
+  outline: none;
+  border-color: var(--c-oral);
+  box-shadow: 0 0 0 3px rgba(21,101,192,.12);
+  background: #fff;
+}
+/* Remove number input arrows */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+input[type=number] { -moz-appearance: textfield; }
+
+.age-inputs { display: flex; gap: 6px; }
+.age-inputs input { flex: 1; min-width: 0; }
+
+.radio-group { display: flex; gap: 20px; padding: 10px 0; }
+.radio-label {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 15px; cursor: pointer;
+}
+.radio-label input[type="radio"] { width: 18px; height: 18px; cursor: pointer; accent-color: var(--c-renal); }
+
+/* ── IBW Badge ── */
+.ibw-badge {
+  background: #e3f2fd; border: 1px solid #90caf9;
+  border-radius: 8px; padding: 8px 12px;
+  font-size: 13px; color: var(--c-oral);
+  margin-bottom: 12px;
+}
+.ibw-badge.hidden { display: none; }
+.warn-text { color: #e64a19; font-size: 12px; }
+
+/* ── Calculate Button ── */
+.btn-calc {
+  width: 100%; padding: 14px;
+  background: var(--c-oral); color: #fff;
+  border: none; border-radius: 10px;
+  font-size: 16px; font-weight: 700;
+  cursor: pointer; letter-spacing: .2px;
+  transition: opacity .15s, transform .1s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.btn-calc:active { opacity: .85; transform: scale(.98); }
+.btn-calc.inj   { background: var(--c-inj); }
+.btn-calc.tb    { background: var(--c-tb); }
+.btn-calc.renal { background: var(--c-renal); }
+
+/* ── Results Grid ── */
+.results-grid { display: grid; gap: 8px; }
+@media (min-width: 560px) { .results-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .results-grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+/* ── Drug Card ── */
+.drug-card {
+  background: var(--c-card);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--c-oral);
+}
+.drug-card.inj   { border-left-color: var(--c-inj); }
+.drug-card.tb    { border-left-color: var(--c-tb); }
+.drug-card.renal { border-left-color: var(--c-renal); }
+
+.drug-name  { font-size: 13px; font-weight: 700; color: var(--c-text); margin-bottom: 5px; line-height: 1.35; }
+.drug-dose  { font-size: 22px; font-weight: 800; color: var(--c-oral); line-height: 1.2; }
+.drug-card.inj  .drug-dose { color: var(--c-inj); }
+.drug-card.tb   .drug-dose { color: var(--c-tb); }
+.drug-card.renal .drug-dose { color: var(--c-renal); }
+.drug-detail { font-size: 12px; color: var(--c-muted); margin-top: 3px; }
+.drug-freq {
+  display: inline-block; margin-top: 6px;
+  background: #f1f5f9; border-radius: 4px;
+  padding: 2px 7px; font-size: 11px; font-weight: 600; color: var(--c-muted);
+}
+.drug-remark { font-size: 11px; color: #e65100; margin-top: 5px; }
+.drug-max    { font-size: 11px; color: #7b1fa2; margin-top: 2px; }
+.ibw-note    { color: var(--c-oral); font-size: 11px; }
+
+/* ── Subcondition sub-items ── */
+.sub-grid { display: grid; gap: 6px; margin-top: 8px; }
+.sub-item {
+  background: #f8fafc;
+  border-radius: 7px;
+  padding: 7px 10px;
+  border: 1px solid var(--c-border);
+}
+.sub-label  { font-size: 10px; font-weight: 700; color: var(--c-muted); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 2px; }
+.sub-dose   { font-size: 15px; font-weight: 800; color: var(--c-inj); }
+.sub-manage { font-size: 11px; color: var(--c-muted); margin-top: 1px; }
+
+/* ── Renal Card ── */
+.renal-card {
+  background: var(--c-card);
+  border-radius: var(--radius);
+  padding: 13px 15px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--c-border);
+  grid-column: 1 / -1;  /* full width */
+}
+@media (min-width: 700px) {
+  .renal-card { grid-column: auto; }
+}
+.renal-card.safe   { border-left-color: #2e7d32; }
+.renal-card.caution { border-left-color: #f57c00; }
+.renal-card.danger { border-left-color: #c62828; }
+
+.renal-name {
+  font-size: 14px; font-weight: 700;
+  display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+.flag      { color: #e64a19; font-size: 13px; }
+.max-text  { font-size: 10px; color: #888; font-weight: 400; }
+.normal-dose { font-size: 12px; color: var(--c-muted); margin-bottom: 8px; }
+
+.renal-rules { display: flex; flex-direction: column; gap: 3px; }
+.renal-row {
+  display: flex; gap: 10px;
+  font-size: 13px; padding: 5px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+.renal-row:last-child { border-bottom: none; }
+.renal-row.active-row {
+  background: #fff3e0; border-radius: 6px;
+  padding: 6px 8px; margin: 0 -4px;
+  border-bottom: none; border: 1px solid #ffcc02;
+}
+.renal-range { font-weight: 600; color: var(--c-muted); min-width: 130px; flex-shrink: 0; font-size: 12px; }
+.renal-dose  { color: var(--c-text); }
+.active-row .renal-range { color: #e65100; }
+.active-row .renal-dose  { font-weight: 700; }
+
+.dialysis-note { font-size: 12px; color: #6a1b9a; margin-top: 6px; font-style: italic; }
+
+/* ── Bottom Nav ── */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: var(--h-nav);
+  background: #fff;
+  box-shadow: 0 -2px 10px rgba(0,0,0,.10);
+  display: flex;
+  z-index: 200;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.nav-btn {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 2px;
+  border: none; background: transparent;
+  cursor: pointer; padding: 8px 4px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: background .15s;
+}
+.nav-btn:active { background: #f1f5f9; }
+.nav-icon  { font-size: 22px; line-height: 1; }
+.nav-label { font-size: 10px; font-weight: 700; color: #9e9e9e; letter-spacing: .1px; }
+.nav-btn.active .nav-label { color: var(--c-oral); }
+.nav-btn[data-tab="injection"].active .nav-label { color: var(--c-inj); }
+.nav-btn[data-tab="tb"].active .nav-label         { color: var(--c-tb); }
+.nav-btn[data-tab="renal"].active .nav-label      { color: var(--c-renal); }
+.nav-btn.active .nav-icon { filter: saturate(1.4) drop-shadow(0 1px 2px rgba(0,0,0,.15)); }
+
+/* ── Empty State ── */
+.empty-state {
+  text-align: center; padding: 48px 20px;
+  color: var(--c-muted); grid-column: 1 / -1;
+}
+.empty-icon { font-size: 48px; margin-bottom: 12px; opacity: .45; display: block; }
+
+/* ── Toast ── */
+#toast {
+  position: fixed; bottom: calc(var(--h-nav) + 16px);
+  left: 50%; transform: translateX(-50%) translateY(8px);
+  background: #323232; color: #fff;
+  padding: 10px 20px; border-radius: 24px;
+  font-size: 14px; font-weight: 500;
+  opacity: 0; pointer-events: none;
+  transition: opacity .2s, transform .2s;
+  z-index: 300; white-space: nowrap;
+}
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ── Desktop ── */
+@media (min-width: 720px) {
+  .app-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .bottom-nav {
+    max-width: 960px;
+    left: 50%; transform: translateX(-50%);
+    border-radius: 16px 16px 0 0;
+    border: 1px solid var(--c-border);
+    border-bottom: none;
+  }
+}

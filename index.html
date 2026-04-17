@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#1565c0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="เครื่องคำนวณยาสำหรับเด็ก โรงพยาบาลชัยบาดาล">
+  <title>CalPedic CBD</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div>
+        <div class="header-title">CalPedic CBD</div>
+        <div class="header-sub">เครื่องคำนวณยา รพ.ชัยบาดาล</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+
+    <!-- ══════════════════════════════
+         TAB 1 : ยากิน
+    ══════════════════════════════ -->
+    <section class="tab-content active" id="tab-oral">
+      <div class="input-card">
+        <div class="input-row">
+          <div class="input-group">
+            <label>น้ำหนัก (kg)</label>
+            <input type="number" id="oral-weight" placeholder="0.0"
+                   min="0" max="150" step="0.1" inputmode="decimal">
+          </div>
+          <div class="input-group">
+            <label>อายุ</label>
+            <div class="age-inputs">
+              <input type="number" id="oral-age-y" placeholder="ปี"
+                     min="0" max="18" inputmode="numeric">
+              <input type="number" id="oral-age-m" placeholder="เดือน"
+                     min="0" max="11" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+        <div id="oral-ibw" class="ibw-badge hidden"></div>
+        <button class="btn-calc" onclick="calcOral()">คำนวณยากิน</button>
+      </div>
+      <div id="oral-results" class="results-grid"></div>
+    </section>
+
+    <!-- ══════════════════════════════
+         TAB 2 : ยาฉีด
+    ══════════════════════════════ -->
+    <section class="tab-content" id="tab-injection">
+      <div class="input-card">
+        <div class="input-row">
+          <div class="input-group">
+            <label>น้ำหนัก (kg)</label>
+            <input type="number" id="inj-weight" placeholder="0.0"
+                   min="0" max="150" step="0.1" inputmode="decimal">
+          </div>
+          <div class="input-group">
+            <label>อายุ</label>
+            <div class="age-inputs">
+              <input type="number" id="inj-age-y" placeholder="ปี"
+                     min="0" max="18" inputmode="numeric">
+              <input type="number" id="inj-age-m" placeholder="เดือน"
+                     min="0" max="11" inputmode="numeric">
+            </div>
+          </div>
+        </div>
+        <div id="inj-ibw" class="ibw-badge hidden"></div>
+        <button class="btn-calc inj" onclick="calcInj()">คำนวณยาฉีด</button>
+      </div>
+      <div id="inj-results" class="results-grid"></div>
+    </section>
+
+    <!-- ══════════════════════════════
+         TAB 3 : วัณโรค
+    ══════════════════════════════ -->
+    <section class="tab-content" id="tab-tb">
+      <div class="input-card">
+        <div class="input-row">
+          <div class="input-group">
+            <label>น้ำหนัก (kg)</label>
+            <input type="number" id="tb-weight" placeholder="0.0"
+                   min="0" max="200" step="0.1" inputmode="decimal">
+          </div>
+          <div class="input-group">
+            <label>อายุ (ปี)</label>
+            <input type="number" id="tb-age" placeholder="ปี"
+                   min="0" max="120" inputmode="numeric">
+          </div>
+        </div>
+        <button class="btn-calc tb" onclick="calcTB()">คำนวณยาวัณโรค</button>
+      </div>
+      <div id="tb-results" class="results-grid"></div>
+    </section>
+
+    <!-- ══════════════════════════════
+         TAB 4 : ยาตามภาวะไต
+    ══════════════════════════════ -->
+    <section class="tab-content" id="tab-renal">
+      <div class="input-card">
+        <div class="input-row">
+          <div class="input-group">
+            <label>เพศ</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="renal-sex" value="male" checked> ชาย
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="renal-sex" value="female"> หญิง
+              </label>
+            </div>
+          </div>
+          <div class="input-group">
+            <label>อายุ (ปี)</label>
+            <input type="number" id="renal-age" placeholder="ปี"
+                   min="0" max="120" inputmode="numeric">
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label>Creatinine (mg/dL)</label>
+            <input type="number" id="renal-cr" placeholder="1.0"
+                   min="0.1" max="20" step="0.01" inputmode="decimal">
+          </div>
+          <div class="input-group">
+            <label>ส่วนสูง (cm)</label>
+            <input type="number" id="renal-height" placeholder="cm"
+                   min="50" max="250" step="0.1" inputmode="decimal">
+          </div>
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label>น้ำหนัก (kg)</label>
+            <input type="number" id="renal-weight" placeholder="0.0"
+                   min="0" max="300" step="0.1" inputmode="decimal">
+          </div>
+          <div class="input-group">
+            <label>eGFR (ถ้ามี)</label>
+            <input type="number" id="renal-egfr" placeholder="ไม่บังคับ"
+                   min="0" max="200" inputmode="numeric">
+          </div>
+        </div>
+        <div id="renal-crcl-display" class="ibw-badge hidden"></div>
+        <button class="btn-calc renal" onclick="calcRenal()">คำนวณ CrCl &amp; ปรับขนาดยา</button>
+      </div>
+      <div id="renal-results" class="results-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- ── Bottom Nav ── -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-tab="oral" onclick="switchTab('oral', this)">
+      <span class="nav-icon">💊</span>
+      <span class="nav-label">ยากิน</span>
+    </button>
+    <button class="nav-btn" data-tab="injection" onclick="switchTab('injection', this)">
+      <span class="nav-icon">💉</span>
+      <span class="nav-label">ยาฉีด</span>
+    </button>
+    <button class="nav-btn" data-tab="tb" onclick="switchTab('tb', this)">
+      <span class="nav-icon">🫁</span>
+      <span class="nav-label">วัณโรค</span>
+    </button>
+    <button class="nav-btn" data-tab="renal" onclick="switchTab('renal', this)">
+      <span class="nav-icon">🫘</span>
+      <span class="nav-label">ยาไต</span>
+    </button>
+  </nav>
+
+  <script src="js/calculator.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('sw.js'));
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+[
+  {
+    "id": "amoxicillin_125",
+    "name": "Amoxycillin 125/5",
+    "concentration": { "mg": 125, "ml": 5 },
+    "min": 8.33, "max": 16.667, "freq": 3,
+    "remark": "หลังอาหาร", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "amoxicillin_250",
+    "name": "Amoxycillin 250/5",
+    "concentration": { "mg": 250, "ml": 5 },
+    "min": 8.33, "max": 16.667, "freq": 3,
+    "remark": "หลังอาหาร", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "amoxiclav_457",
+    "name": "Amoxycillin+Clav 457/5",
+    "concentration": { "mg": 400, "ml": 5 },
+    "min": 10, "max": 22.5, "freq": 2,
+    "remark": "หลังอาหาร", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "amoxicillin_250_hd",
+    "name": "Amoxycillin 250/5 (High dose)",
+    "concentration": { "mg": 250, "ml": 5 },
+    "min": 26.7, "max": 33.33, "freq": 3,
+    "remark": "หลังอาหาร", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "amoxiclav_457_hd",
+    "name": "Amoxycillin+Clav 457/5 (High dose)",
+    "concentration": { "mg": 400, "ml": 5 },
+    "min": 40, "max": 45, "freq": 2,
+    "remark": "หลังอาหาร", "maxDay": 4000, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "azithromycin",
+    "name": "Azithromycin 200/5",
+    "concentration": { "mg": 200, "ml": 5 },
+    "min": 5, "max": 12, "freq": 1,
+    "remark": "ก่อนอาหาร", "maxDay": 500, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "bactrim",
+    "name": "Bactrim 200+40/5 (TMP)",
+    "concentration": { "mg": 40, "ml": 5 },
+    "min": 4, "max": 6, "freq": 2,
+    "remark": "หลังอาหาร", "maxDay": 640, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "carbocysteine",
+    "name": "Carbocysteine 100/5",
+    "concentration": { "mg": 100, "ml": 5 },
+    "min": 8, "max": 10, "freq": 3,
+    "remark": "หลังอาหาร", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "cefixime",
+    "name": "Cefixime 100/5",
+    "concentration": { "mg": 100, "ml": 5 },
+    "min": 4, "max": null, "freq": 2,
+    "remark": "หลังอาหาร", "maxDay": 400, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "cetirizine",
+    "name": "Cetirizine 1mg/mL",
+    "concentration": { "mg": 1, "ml": 1 },
+    "min": 0.25, "max": 0.3, "freq": 1,
+    "remark": "ก่อนนอน", "maxDay": 5, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "cpm",
+    "name": "CPM 2mg/5mL (อายุ ≥2ปี) ★",
+    "concentration": { "mg": 2, "ml": 5 },
+    "min": 0.1, "max": 0.13, "freq": 3,
+    "remark": "หลังอาหาร", "maxDay": 12, "useIBW": true, "type": "standard"
+  },
+  {
+    "id": "dicloxacillin_s",
+    "name": "Dicloxacillin (S.aureus)",
+    "concentration": { "mg": 62.5, "ml": 5 },
+    "min": 3.13, "max": 6.25, "freq": 4,
+    "remark": "ก่อนอาหาร", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "dicloxacillin_mssa",
+    "name": "Dicloxacillin (MSSA)",
+    "concentration": { "mg": 62.5, "ml": 5 },
+    "min": 6.25, "max": 12.5, "freq": 4,
+    "remark": "ก่อนอาหาร", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "diazepam",
+    "name": "Diazepam 5mg/5mL",
+    "concentration": { "mg": 5, "ml": 5 },
+    "min": 0.3, "max": 0.33, "freq": 3,
+    "remark": "q8hr เมื่อมีไข้สูง", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "domperidone",
+    "name": "Domperidone 1mg/mL",
+    "concentration": { "mg": 1, "ml": 1 },
+    "min": 0.2, "max": 0.4, "freq": 3,
+    "remark": "ก่อนอาหาร 15–30 นาที", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "erythromycin",
+    "name": "Erythromycin 125/5",
+    "concentration": { "mg": 125, "ml": 5 },
+    "min": 10, "max": 12.5, "freq": 4,
+    "remark": "หลังอาหาร", "maxDay": null, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "ferrous",
+    "name": "Ferrous fumarate 15mg/0.6mL (IDA)",
+    "concentration": { "mg": 15, "ml": 0.6 },
+    "min": 4, "max": 6, "freq": 1,
+    "remark": "วันละ 1 ครั้ง", "maxDay": 120, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "guaifenesin",
+    "name": "Guaifenesin 100/5",
+    "concentration": { "mg": 100, "ml": 5 },
+    "min": 4, "max": 100, "freq": 3,
+    "remark": "หลังอาหาร", "maxDay": 300, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "hydroxyzine",
+    "name": "Hydroxyzine 10mg/5mL",
+    "concentration": { "mg": 10, "ml": 5 },
+    "min": 0.35, "max": 0.67, "freq": 3,
+    "remark": "หลังอาหาร", "maxDay": 50, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "hyoscine",
+    "name": "Hyoscine 1mg/mL",
+    "concentration": { "mg": 1, "ml": 1 },
+    "min": 0.4, "max": 0.8, "freq": 4,
+    "remark": "q6 ชม.", "maxDay": 40, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "ibuprofen",
+    "name": "Ibuprofen 100/5 ★",
+    "concentration": { "mg": 100, "ml": 5 },
+    "min": 5, "max": 10, "freq": 3,
+    "remark": "หลังอาหาร", "maxDay": null, "useIBW": true, "type": "standard"
+  },
+  {
+    "id": "lactulose",
+    "name": "Lactulose 10g/15mL",
+    "concentration": { "mg": 10000, "ml": 15 },
+    "min": 670, "max": 2000, "freq": 1,
+    "remark": "ก่อนนอน", "maxDay": 60000, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "oseltamivir",
+    "name": "Oseltamivir (Tamiflu) ★",
+    "type": "bracket",
+    "freq": 2,
+    "remark": "วันละ 2 ครั้ง × 5 วัน",
+    "brackets": [
+      { "label": "น้ำหนัก > 40 kg", "minWeight": 40.01, "dose": 75 },
+      { "label": "น้ำหนัก > 23 kg", "minWeight": 23.01, "dose": 60 },
+      { "label": "น้ำหนัก > 15 kg", "minWeight": 15.01, "dose": 45 },
+      { "label": "น้ำหนัก > 10 kg", "minWeight": 10.01, "dose": 30 },
+      { "label": "น้ำหนัก ≤ 10 kg", "minWeight": 0, "dosePerKg": 3, "formula": "mg/kg" }
+    ]
+  },
+  {
+    "id": "paracetamol",
+    "name": "Paracetamol syrup 120/5 ★",
+    "concentration": { "mg": 120, "ml": 5 },
+    "min": 10, "max": 15, "freq": 6,
+    "remark": "ทุก 4–6 ชม. เมื่อมีไข้/ปวด", "maxDay": 4000, "useIBW": true, "type": "standard"
+  },
+  {
+    "id": "paracetamol_drop",
+    "name": "Paracetamol drop 100mg/mL ★",
+    "concentration": { "mg": 100, "ml": 1 },
+    "min": 10, "max": 15, "freq": 6,
+    "remark": "ทุก 4–6 ชม. เมื่อมีไข้/ปวด", "maxDay": 4000, "useIBW": true, "type": "standard"
+  },
+  {
+    "id": "salbutamol",
+    "name": "Salbutamol 2mg/5mL ★",
+    "concentration": { "mg": 2, "ml": 5 },
+    "min": 0.1, "max": 0.2, "freq": 3,
+    "remark": "หลังอาหาร", "maxDay": 6, "useIBW": true, "type": "standard"
+  },
+  {
+    "id": "simethicone",
+    "name": "Simethicone 40mg/0.6mL",
+    "concentration": { "mg": 40, "ml": 0.6 },
+    "min": 1.76, "max": 3.53, "freq": 4,
+    "remark": "หลังอาหารและก่อนนอน", "maxDay": 240, "useIBW": false, "type": "standard"
+  },
+  {
+    "id": "prednisolone",
+    "name": "Prednisolone 5mg/tab",
+    "concentration": { "mg": 5, "ml": 1 },
+    "min": 1, "max": 2, "freq": 3,
+    "remark": "หลังอาหาร (เม็ด)", "maxDay": 40, "useIBW": false, "type": "standard"
+  }
+]
