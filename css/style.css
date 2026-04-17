@@ -289,3 +289,12 @@ input[type=number] { -moz-appearance: textfield; }
     border-bottom: none;
   }
 }
+
+/* ── Reference footer ── */
+.ref-footer {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--c-muted);
+  padding: 12px 16px 8px;
+  opacity: 0.8;
+}
