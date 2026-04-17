@@ -4,8 +4,18 @@
     "name": "H : Isoniazid",
     "strength": 100,
     "unit": "mg/เม็ด",
-    "min": 4, "max": 6,
+    "min": 10, "max": 15,
     "maxDay": 300,
+    "maxDayType": "fixed",
+    "remark": ""
+  },
+  {
+    "id": "isoniazid_hd",
+    "name": "high dose inh",
+    "strength": 100,
+    "unit": "mg/เม็ด",
+    "min": 15, "max": 20,
+    "maxDay": 900,
     "maxDayType": "fixed",
     "remark": ""
   },
@@ -14,7 +24,7 @@
     "name": "R : Rifampicin 300mg",
     "strength": 300,
     "unit": "mg/เม็ด",
-    "min": 8, "max": 12,
+    "min": 10, "max": 20,
     "maxDay": 600,
     "maxDayType": "fixed",
     "remark": ""
@@ -24,7 +34,7 @@
     "name": "R : Rifampicin 450mg",
     "strength": 450,
     "unit": "mg/เม็ด",
-    "min": 8, "max": 12,
+    "min": 10, "max": 20,
     "maxDay": 600,
     "maxDayType": "fixed",
     "remark": ""
@@ -34,41 +44,29 @@
     "name": "Z : Pyrazinamide",
     "strength": 500,
     "unit": "mg/เม็ด",
-    "min": 20, "max": 30,
+    "min": 30, "max": 40,
     "maxDay": 2000,
     "maxDayType": "fixed",
-    "remark": "CrCl < 30 → ให้ 3 วัน/สัปดาห์"
+    "remark": ""
   },
   {
     "id": "ethambutol_400",
     "name": "E : Ethambutol 400mg",
     "strength": 400,
     "unit": "mg/เม็ด",
-    "min": 15, "max": 20,
+    "min": 15, "max": 25,
     "maxDay": 1200,
     "maxDayType": "fixed",
-    "remark": "CrCl < 30 → ให้ 3 วัน/สัปดาห์ | MAX 1600 mg/day"
+    "remark": ""
   },
   {
     "id": "ethambutol_500",
     "name": "E : Ethambutol 500mg",
     "strength": 500,
     "unit": "mg/เม็ด",
-    "min": 15, "max": 20,
+    "min": 15, "max": 25,
     "maxDay": 1200,
     "maxDayType": "fixed",
-    "remark": "CrCl < 30 → ให้ 3 วัน/สัปดาห์ | MAX 1600 mg/day"
-  },
-  {
-    "id": "streptomycin",
-    "name": "S : Streptomycin",
-    "strength": 500,
-    "unit": "mg/vial",
-    "min": 15, "max": null,
-    "maxDayType": "age_based",
-    "maxDayYoung": 1000,
-    "maxDayElderly": 750,
-    "elderlyAge": 65,
-    "remark": "CrCl < 30 → ให้ 3 ครั้ง/สัปดาห์ | อายุ >65ปี MAX 750 mg/day"
+    "remark": ""
   }
 ]
