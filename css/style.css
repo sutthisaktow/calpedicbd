@@ -317,3 +317,26 @@ input[type=number] { -moz-appearance: textfield; }
   padding: 12px 16px 8px;
   opacity: 0.8;
 }
+
+/* ── Sub-tabs (TB เด็ก / ผู้ใหญ่) ── */
+.subtab-bar {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px 0;
+}
+.subtab-btn {
+  flex: 1;
+  padding: 8px 0;
+  border: 2px solid var(--c-tb);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--c-tb);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.subtab-btn.active {
+  background: var(--c-tb);
+  color: #fff;
+}

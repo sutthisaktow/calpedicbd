@@ -1,19 +1,21 @@
 // app.js — Application logic
 
-const data = { oral: [], injection: [], tb: [], renal: [] };
+const data = { oral: [], injection: [], tb: [], tb_adult: [], renal: [] };
 
 async function loadData() {
   try {
-    const [oral, injection, tb, renal] = await Promise.all([
+    const [oral, injection, tb, tb_adult, renal] = await Promise.all([
       fetch('data/oral.json').then(r => r.json()),
       fetch('data/injection.json').then(r => r.json()),
       fetch('data/tb.json').then(r => r.json()),
+      fetch('data/tb_adult.json').then(r => r.json()),
       fetch('data/renal.json').then(r => r.json()),
     ]);
-    Object.assign(data, { oral, injection, tb, renal });
+    Object.assign(data, { oral, injection, tb, tb_adult, renal });
     showEmpty('oral-results', '💊', 'ใส่น้ำหนักและอายุ แล้วกด คำนวณ');
     showEmpty('inj-results', '💉', 'ใส่น้ำหนักและอายุ แล้วกด คำนวณ');
     showEmpty('tb-results', '🫁', 'ใส่น้ำหนักและอายุ แล้วกด คำนวณ');
+    showEmpty('tb-adult-results', '🫁', 'ใส่น้ำหนักและอายุ แล้วกด คำนวณ');
     showEmpty('renal-results', '🫘', 'ใส่ข้อมูลผู้ป่วย แล้วกด คำนวณ');
   } catch (e) {
     console.error('Load error:', e);
@@ -21,6 +23,13 @@ async function loadData() {
 }
 
 // ── Tab switching ──────────────────────────────────────────────
+function switchTBSubtab(which, btn) {
+  document.querySelectorAll('.subtab-btn').forEach(el => el.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tb-child-section').style.display = which === 'child' ? '' : 'none';
+  document.getElementById('tb-adult-section').style.display = which === 'adult' ? '' : 'none';
+}
+
 function switchTab(tab, btn) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
@@ -184,6 +193,20 @@ function makeTBCard(drug, res) {
     ${res.remark ? `<div class="drug-remark">${res.remark}</div>` : ''}
   `;
   return d;
+}
+
+// ── TB ADULT ───────────────────────────────────────────────────
+function calcTBAdult() {
+  const weight = parseFloat(document.getElementById('tb-adult-weight').value);
+  const age    = parseInt(document.getElementById('tb-adult-age').value) || 0;
+  if (!weight || weight <= 0) { toast('กรุณาใส่น้ำหนัก'); return; }
+
+  const container = document.getElementById('tb-adult-results');
+  container.innerHTML = '';
+  data.tb_adult.forEach(drug => {
+    const res = calcTBDose(drug, weight, age);
+    container.appendChild(makeTBCard(drug, res));
+  });
 }
 
 // ── RENAL ──────────────────────────────────────────────────────

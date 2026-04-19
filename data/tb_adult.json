@@ -1,0 +1,81 @@
+[
+  {
+    "id": "adult_isoniazid",
+    "name": "H : Isoniazid",
+    "strength": 100,
+    "unit": "mg/เม็ด",
+    "min": 4,
+    "max": 6,
+    "maxDay": 300,
+    "maxDayType": "fixed",
+    "remark": "-"
+  },
+  {
+    "id": "adult_rifampicin_300",
+    "name": "R : Rifampicin 300mg",
+    "strength": 300,
+    "unit": "mg/เม็ด",
+    "min": 8,
+    "max": 12,
+    "maxDay": 600,
+    "maxDayType": "fixed",
+    "remark": "-"
+  },
+  {
+    "id": "adult_rifampicin_450",
+    "name": "R : Rifampicin 450mg",
+    "strength": 450,
+    "unit": "mg/เม็ด",
+    "min": 8,
+    "max": 12,
+    "maxDay": 600,
+    "maxDayType": "fixed",
+    "remark": "-"
+  },
+  {
+    "id": "adult_pyrazinamide",
+    "name": "Z : Pyrazinamide",
+    "strength": 500,
+    "unit": "mg/เม็ด",
+    "min": 20,
+    "max": 30,
+    "maxDay": 2000,
+    "maxDayType": "fixed",
+    "remark": "CrCl < 30 3วัน/week"
+  },
+  {
+    "id": "adult_ethambutol_400",
+    "name": "E : Ethambutol 400mg",
+    "strength": 400,
+    "unit": "mg/เม็ด",
+    "min": 15,
+    "max": 20,
+    "maxDay": 1200,
+    "maxDayType": "fixed",
+    "remark": "CrCl < 30 3วัน/week MAX 1600"
+  },
+  {
+    "id": "adult_ethambutol_500",
+    "name": "E : Ethambutol 500mg",
+    "strength": 500,
+    "unit": "mg/เม็ด",
+    "min": 15,
+    "max": 20,
+    "maxDay": 1200,
+    "maxDayType": "fixed",
+    "remark": "CrCl < 30 3วัน/week MAX 1600"
+  },
+  {
+    "id": "adult_streptomycin",
+    "name": "S : Streptomycin",
+    "strength": 500,
+    "unit": "mg/vial",
+    "min": 15,
+    "max": null,
+    "maxDayType": "age_based",
+    "elderlyAge": 65,
+    "maxDayElderly": 750,
+    "maxDayYoung": 1000,
+    "remark": "CrCl < 30 3 times/wk"
+  }
+]
