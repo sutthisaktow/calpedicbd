@@ -87,24 +87,55 @@
          TAB 3 : วัณโรค
     ══════════════════════════════ -->
     <section class="tab-content" id="tab-tb">
-      <div class="input-card">
-        <div class="input-row">
-          <div class="input-group">
-            <label>น้ำหนัก (kg)</label>
-            <input type="number" id="tb-weight" placeholder="0.0"
-                   min="0" max="200" step="0.1" inputmode="decimal">
-          </div>
-          <div class="input-group">
-            <label>อายุ (ปี)</label>
-            <input type="number" id="tb-age" placeholder="ปี"
-                   min="0" max="120" inputmode="numeric">
-          </div>
-        </div>
-        <button class="btn-calc tb" onclick="calcTB()">คำนวณยาวัณโรค</button>
+      <!-- Sub-tabs เด็ก / ผู้ใหญ่ -->
+      <div class="subtab-bar">
+        <button class="subtab-btn active" id="subtab-child" onclick="switchTBSubtab('child', this)">เด็ก</button>
+        <button class="subtab-btn" id="subtab-adult" onclick="switchTBSubtab('adult', this)">ผู้ใหญ่</button>
       </div>
-      <div class="search-bar"><input type="search" id="tb-search" placeholder="ค้นหาชื่อยา..." oninput="filterResults('tb-results', this.value)"></div>
-      <div id="tb-results" class="results-grid"></div>
-      <p class="ref-footer">อ้างอิง: แนวทางการควบคุมวัณโรคประเทศไทย พ.ศ. 2564</p>
+
+      <!-- เด็ก -->
+      <div id="tb-child-section">
+        <div class="input-card">
+          <div class="input-row">
+            <div class="input-group">
+              <label>น้ำหนัก (kg)</label>
+              <input type="number" id="tb-weight" placeholder="0.0"
+                     min="0" max="200" step="0.1" inputmode="decimal">
+            </div>
+            <div class="input-group">
+              <label>อายุ (ปี)</label>
+              <input type="number" id="tb-age" placeholder="ปี"
+                     min="0" max="120" inputmode="numeric">
+            </div>
+          </div>
+          <button class="btn-calc tb" onclick="calcTB()">คำนวณยาวัณโรคเด็ก</button>
+        </div>
+        <div class="search-bar"><input type="search" id="tb-search" placeholder="ค้นหาชื่อยา..." oninput="filterResults('tb-results', this.value)"></div>
+        <div id="tb-results" class="results-grid"></div>
+        <p class="ref-footer">อ้างอิง: แนวทางการควบคุมวัณโรคประเทศไทย พ.ศ. 2564</p>
+      </div>
+
+      <!-- ผู้ใหญ่ -->
+      <div id="tb-adult-section" style="display:none">
+        <div class="input-card">
+          <div class="input-row">
+            <div class="input-group">
+              <label>น้ำหนัก (kg)</label>
+              <input type="number" id="tb-adult-weight" placeholder="0.0"
+                     min="0" max="200" step="0.1" inputmode="decimal">
+            </div>
+            <div class="input-group">
+              <label>อายุ (ปี)</label>
+              <input type="number" id="tb-adult-age" placeholder="ปี"
+                     min="0" max="120" inputmode="numeric">
+            </div>
+          </div>
+          <button class="btn-calc tb" onclick="calcTBAdult()">คำนวณยาวัณโรคผู้ใหญ่</button>
+        </div>
+        <div class="search-bar"><input type="search" id="tb-adult-search" placeholder="ค้นหาชื่อยา..." oninput="filterResults('tb-adult-results', this.value)"></div>
+        <div id="tb-adult-results" class="results-grid"></div>
+        <p class="ref-footer">อ้างอิง: แนวทางการควบคุมวัณโรคประเทศไทย พ.ศ. 2564</p>
+      </div>
     </section>
 
     <!-- ══════════════════════════════
